@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Arman Teachers</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: rgba(251, 251, 251, 0.974);
+    }
+
+    .navbar {
+      background: #ffffff;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      flex-wrap: wrap;
+    }
+
+    .navbar h1 {
+      font-size: 24px;
+    }
+
+    .navbar h1 span {
+      color: red;
+    }
+
+    .nav-menu {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      padding-left: 0;
+    }
+
+    .nav-menu li {
+      position: relative;
+    }
+
+    .nav-menu a {
+      text-decoration: none;
+      color: #333;
+      padding: 8px 12px;
+      display: block;
+      font-size: 16px;
+    }
+
+    .nav-menu a:hover {
+      color: red;
+    }
+
+    .dropdown-menu,
+    .nested-menu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: white;
+      list-style: none;
+      padding: 0;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      z-index: 10;
+    }
+
+    .dropdown-menu li,
+    .nested-menu li {
+      width: 220px;
+    }
+
+    .dropdown:hover .dropdown-menu {
+      display: block;
+    }
+
+    .nested-dropdown:hover .nested-menu {
+      display: block;
+      top: 0;
+      left: 100%;
+    }
+
+    .images,
+    .first-three-images,
+    .last-three-images {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 25px;
+      justify-content: center;
+      margin: 20px auto;
+      max-width: 1200px;
+    }
+
+    .heading-paragraph {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 30px;
+      margin: 20px;
+    }
+
+    .heading-paragraph .paragraph {
+      max-width: 600px;
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 30px;
+      margin: 50px 20px;
+    }
+
+    .container img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+
+    .two-buttons {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 15px;
+      width: 90%;
+    }
+
+    .two-buttons button,
+    .two-buttons BUTTon {
+      border: none;
+      padding: 10px 15px;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .two-buttons button {
+      background-color: rgb(196, 228, 228);
+    }
+
+    .two-buttons BUTTon {
+      background-color: red;
+    }
+
+    .two-buttons a {
+      text-decoration: none;
+      color: white;
+    }
+
+    .footer-one {
+      background-color: rgb(69, 119, 170);
+      padding: 50px 20px;
+      text-align: center;
+    }
+
+    .footer-one img {
+      margin: 10px;
+      max-width: 100%;
+      height: auto;
+    }
+
+    footer {
+      background: #015c90;
+      color: white;
+      padding: 40px 20px;
+      font-family: sans-serif;
+    }
+
+    .footer-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      gap: 30px;
+    }
+
+    .footer-section {
+      flex: 1 1 200px;
+    }
+
+    .footer-section ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .footer-section ul li {
+      margin: 5px 0;
+    }
+
+    .footer-brand {
+      flex: 1 1 200px;
+      text-align: center;
+    }
+
+    .social-icons span {
+      margin-right: 10px;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      padding-top: 20px;
+      font-size: 14px;
+      border-top: 1px solid #ccc;
+    }
+
+    @media (max-width: 768px) {
+      .nav-menu {
+        flex-direction: column;
+        width: 100%;
+        background-color: #ffffff;
+        margin-top: 10px;
+      }
+
+      .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .first-three-images,
+      .last-three-images,
+      .images {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .two-buttons {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Keep your HTML structure here (same as before), use classes as needed -->
+  <!-- Replace inline styles with class-based styles for headings, paragraphs, etc. -->
+    <nav class="navbar">
+      <h1>Arman <span>Teacher</span></h1>
+    <ul class="nav-menu">
+      <li><a href="armantrachers.html">Home</a></li>
+      <li class="dropdown">
+        <a href="#">Courses ▾</a>
+        <ul class="dropdown-menu">
+          <li class="nested-dropdown">
+            <a href="#">Information Of Technology ▸</a>
+            <ul class="nested-menu">
+              <li><a href="http://127.0.0.1:5500/MS-office.html">Ms Office</a></li>
+              <li><a href="http://127.0.0.1:5500/ACIT.HTML">ACIT</a></li>
+              <li><a href="http://127.0.0.1:5500/ADIT.HTML">ADIT</a></li>
+              <li><a href="http://127.0.0.1:5500/web-designing.html">Web Designing</a></li>
+              <li><a href="http://127.0.0.1:5500/computerized-accounting.html">Computerized Accounting</a></li>
+              <li><a href="http://127.0.0.1:5500/graphic-designing.html">Graphic Designing</a></li>
+              <li><a href="http://127.0.0.1:5500/full-stack-developer.html">Full Stack Developer</a></li>
+              <li><a href="http://127.0.0.1:5500/film-macking.html">Film Making</a></li>
+              <li><a href="http://127.0.0.1:5500/Digital-marketing.html">Digital Marketing Course</a></li>
+              <li><a href="http://127.0.0.1:5500/SEO.html">SEO</a></li>
+              <li><a href="http://127.0.0.1:5500/daraz.html">Daraz</a></li>
+              <li><a href="http://127.0.0.1:5500/SHOPIFY.HTML">Shopify</a></li>
+              <li><a href="http://127.0.0.1:5500/jwellery.html">Jewelry</a></li>
+            </ul>
+          </li>
+          <li class="nested-dropdown">
+            <a href="#">Engineering ▸</a>
+            <ul class="nested-menu">
+          <li><a href="http://127.0.0.1:5500/autocad.html">autocad</a></li>
+    <li><a href="http://127.0.0.1:5500/revit.html">revit</a></li>
+    <li><a href="http://127.0.0.1:5500/3d.html"> 3d Studio max</a></li>
+    <li><a href="http://127.0.0.1:5500/google-sketch.html">Google sketch</a></li>
+    <li><a href="http://127.0.0.1:5500/lemon.html">lemon</a></li>
+            </ul>
+          </li>
+          <li class="nested-dropdown">
+            <a href="#">2D & 3D Animation ▸</a>
+               <ul  class="nested-menu">
+            <LI><a href="http://127.0.0.1:5500/blender.html">Blender</a></LI>
+    <li><a href="http://127.0.0.1:5500/mayas.html">Maya</a></li>
+    </ul>
+          </li>
+          <li class="nested-dropdown">
+            <a href="#">Game Design & Dev ▸</a>
+            <ul class="nested-menu">
+              <li><a href="unity.html">unity</a></li>
+              <li><a href="unreal.html">Unreal Engine Courses</a></li>
+             
+            </ul>
+          </li>
+        </ul>
+      </li>
+       <li><a href="aboutusofarmanteachers.html">About Us</a></li>
+      <li><a href="english-language-course-armanteachers.html">English Language Course</a></li>
+      <li><a href="Contact-Us-Armanteachers.html">Contact Us</a></li>
+      <li><a href="#">Software Download</a></li>
+    </ul>
+  </nav>
+  <br>
+  <br>
+  <br><br><br><br>
+  <h1 style="text-align:center;"> Computer Cources <span>Computerized Accounting</span></h1>
+  <br><br>
+  <br>
+  <h1 style="font-size: 60px; text-align: center;">Wellcome To Arman Teacher <br> Institute.</h1>
+  <p style="text-align: justify; width: 800px; color: #333; font-size: x-large; margin-left: calc(36% * 2 - 50%); line-height: 30px;">Arman Teacher is the Best It and Multimedia Institute in Karachi that is offering Computer, Digital Marketing, IT and Mulimedia, Engineering Courses in Karachi by the Best Industry Professionals Having Experience up to 10 years.</p>
+  <br><br>
+  <h1><span><b>Most Popular Courses</b></span></h1>
+  <br>
+  <div class="images">
+  <img src="https://armanteacher.com/images/14.png" alt="" style="height: 300px;">
+   <img src="https://armanteacher.com/images/16.png" alt="" style="height: 300px;">
+    <img src="https://armanteacher.com/images/18.png" alt="" style="height: 300px;">
+     <img src="https://armanteacher.com/images/15.png" alt="" style="height: 300px;">
+  </div>
+  <div class="heading-paragraph">
+    <div class="heading">
+      <br>
+      <h1 style="font-size: 50px; "><b>It and Multimedia <br> Courses</b></h1>
+    </div>
+    <div class="paragraph">
+      <p style="text-align: justify; text-align: justify; margin-top: 80px; width: 800px; color: #333; font-size: x-large; margin-left: calc(27% * 2 - 50%); line-height: 30px">All types of businesses need access to development resources, so we give you the option to decide how much you need to use.</p>
+    </div>
+  </div>
+
+
+
+  <div class="first-three-images">
+   <div class="first-image">
+    <img src="https://armanteacher.com/images/6.jpg" alt="" width="450px" style="border-radius: 7px;">
+    <br>
+    <h1>Full Stack Developer <br> COURSE</h1>
+    <p style="text-align: justify; color: #333; font-size: x-large; width: 400px;">Become a full stack Web Developer and exploit your chances of getting hired and lead the variety of modern technologies.</p>
+    <div class="two-buttons">
+
+      <button style="background-color: rgb(196, 228, 228); height: 40px; border: none;  width: 100px; border-radius: 5px; ">Miss Ruqia</button>
+       <BUTTon style="margin-left: 150px; background-color: rgb(255, 0, 0); height: 40px; border: none;  width: 150px; border-radius: 5px; button a{color: white;} margin-left: 60px; ">
+        <a style="text-decoration: none; color: white;" href="full-stack-developer.html">Read More</a>
+       </BUTTon>
+    </div>
+  </div>
+   <div class="second-image">
+    <img src="https://armanteacher.com/images/12.jpg" alt=""width="450px" style="border-radius: 7px;">
+    <br>
+    <h1>DIGITAL MARKETING <br>COURSE</h1>
+    <p style="text-align: justify; color: #333; font-size: x-large; width: 400px;">Certainly! Digital marketing is a broad field that encompasses various online strategies and tactics to promote products,services,or brands.</p>
+  <div class="two-buttons">
+
+      <button style="background-color: rgb(196, 228, 228); height: 40px; border: none;  width: 100px; border-radius: 5px; ">Miss Ruqia</button>
+       <BUTTon style=" margin-left: 150px; background-color: rgb(255, 0, 0); height: 40px; border: none;  width: 150px; border-radius: 5px; ">
+        <a style="text-decoration: none; color: white;" href="Digital-marketing.html">Read More</a>
+       </BUTTon>
+  </div>
+  </div>
+   <div class="third-image">
+    <img src="https://armanteacher.com/images/11.jpg" alt=""width="450px" style="border-radius: 7px;">
+    <br>
+    <h1>GRAPHICS DESIGNING <br> COURSE</h1>
+    <p style="text-align: justify; color: #333; font-size: x-large; width: 400px;">Love to make designs on paper and wanted to reach it to another level, then why not start Learning Graphics Designing now.</p>
+   <div class="two-buttons">
+
+      <button style="background-color: rgb(196, 228, 228); height: 40px; border: none;  width: 100px; border-radius: 5px; ">Miss Ruqia</button>
+       <BUTTon style=" margin-left: 150px; background-color: rgb(255, 0, 0); height: 40px; border: none;  width: 150px; border-radius: 5px; button a{color: white;} margin-left: 60px; ">
+        <a style="text-decoration: none; color: white;" href="graphic-designing.html">Read More</a>
+       </BUTTon>
+  </div>
+  </div>
+  </div>
+
+
+  <br><br><br><br><br>
+  <div class="first-three-images">
+   <div class="first-image">
+    <img src="https://armanteacher.com/images/19.jpg" alt="" width="450px" style="border-radius: 7px;">
+    <br>
+    <h1>Computerized Accounting <br> Course</h1>
+    <p style="text-align: justify; color: #333; font-size: x-large; width: 400px;">Computerized accounting refers to the use of computers and specialized software to manage and streamline financial.</p>
+    <div class="two-buttons">
+
+      <button style="background-color: rgb(196, 228, 228); height: 40px; border: none;  width: 100px; border-radius: 5px; ">Miss Ruqia</button>
+       <BUTTon style="margin-left: 150px; background-color: rgb(255, 0, 0); height: 40px; border: none;  width: 150px; border-radius: 5px; button a{color: white;} margin-left: 60px; ">
+        <a style="text-decoration: none; color: white;" href="computerized-accounting.html">Read More</a>
+       </BUTTon>
+    </div>
+  </div>
+   <div class="second-image">
+    <img src="https://armanteacher.com/images/18.jpg" alt=""width="450px" style="border-radius: 7px;">
+    <br>
+    <h1>Search Engine Optimization <br>(SEO)
+</h1>
+    <p style="text-align: justify; color: #333; font-size: x-large; width: 400px;">SEO is a digital marketing strategy focused on improving a website's visibility in search engine results pages(SERPs):</p>
+  <div class="two-buttons">
+
+      <button style="background-color: rgb(196, 228, 228); height: 40px; border: none;  width: 100px; border-radius: 5px; ">Miss Ruqia</button>
+       <BUTTon style="margin-left: 150px; background-color: rgb(255, 0, 0); height: 40px; border: none;  width: 150px; border-radius: 5px; ">
+        <a style="text-decoration: none; color: white;" href="SEO.html">Read More</a>
+       </BUTTon>
+  </div>
+  </div>
+   <div class="third-image">
+    <img src="https://armanteacher.com/images/20.jpg" alt=""width="450px" style="border-radius: 7px;">
+    <br>
+    <h1>Miscrosoft Office <BR> COURSE</h1>
+    <p style="text-align: justify; color: #333; font-size: x-large; width: 400px;">Begin your career with most demanding Microsoft Office Certification and learn all leading Microsoft Office applications.</p>
+   <div class="two-buttons">
+
+      <button style="background-color: rgb(196, 228, 228); height: 40px; border: none;  width: 100px; border-radius: 5px; ">Miss Ruqia</button>
+       <BUTTon style=" margin-left: 150px; background-color: rgb(255, 0, 0); height: 40px; border: none;  width: 150px; border-radius: 5px; button a{color: white;} margin-left: 60px; ">
+        <a style="text-decoration: none; color: white;" href="MS-office.html">Read More</a>
+       </BUTTon>
+  </div>
+  </div>
+  </div>
+ <br><br><br><br><br>
+<div class="container">
+  <div class="text-section">
+    <h1><span><b>About Arman Teacher</b></span></h1>
+<h1><b>Our Mission.</b></h1>
+<p style="text-align: justify; width: 85%; color: #333; font-size: x-large;">Arman Teacher Institue is a dynamic Computer Institution of Professional Courses located in Karachi. Our mission is to craft and cultivate entrepreneurs […]</p>
+<h1><b>Our Vision.</b></h1>
+<p style="text-align: justify; width: 85%; color: #333; font-size: x-large;">Arman Teacher Institute envisions being not only a superior higher education institution in Pakistan but also an incubator of innovative ideas and a hub for entrepreneurship […]</p>
+  </div>
+<div class="image-section">
+  <img src="https://armanteacher.com/images/3.jpg" alt="" >
+</div>
+</div>
+<br>
+
+
+
+<div class="footer-one">
+  <h1 style="color: #ffffff; text-align: center;">Meet Our Team Of Expert</h1>
+  <img src="https://armanteacher.com/assets/images/team/01.png" alt="">
+  <img src="https://armanteacher.com/assets/images/team/02.png" alt="">
+  <img src="https://armanteacher.com/assets/images/team/03.png" alt="">
+</div>
+
+
+
+<br><br><br>
+   <footer>
+  <div class="footer-container">
+    <div class="footer-section address">
+      <h3>Address:</h3>
+      <p>Address FL 4 /4 block 5 Gulshan e Iqbal<br>Karachi, Sindh 75300, Pakistan.</p>
+      <h3>Contact Info:</h3>
+      <p>0341-2280528</p>
+      <h3>Email:</h3>
+      <p>akramarman104@gmail.com</p>
+    </div>
+    <div class="footer-section pages">
+      <h3>Pages</h3>
+      <ul>
+        <li>About Us</li>
+        <li>English Language</li>
+        <li>Events</li>
+        <li>Contact Us</li>
+      </ul>
+    </div>
+    <div class="footer-section services">
+      <h3>Service</h3>
+      <ul>
+        <li>Web Designing</li>
+        <li>Documentation</li>
+        <li>Graphic Designing</li>
+        <li>2d & 3d Animation</li>
+      </ul>
+    </div>
+    <div class="footer-brand">
+      <h2>ArmanTeacher.</h2>
+      <div class="social-icons">
+        <!-- Add icons from FontAwesome or any other -->
+        <span>FB</span>
+        <span>IG</span>
+        <span>TW</span>
+        <span>IN</span>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>Copyright 2023 - 2024 - Arman Teacher || Design and Seo By RuqiaAlizada</p>
+  </div>
+</footer>
+<style>
+    footer {
+  background: #015c90;
+  color: white;
+  padding: 40px 20px;
+  font-family: sans-serif;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer-section {
+ 
+  margin: 10px;
+}
+
+.footer-section h3 {
+  margin-bottom: 10px;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section ul li {
+  margin: 5px 0;
+}
+
+.footer-brand {
+
+  margin: 10px;
+}
+
+.footer-brand h2 {
+  font-size: 24px;
+}
+
+.social-icons span {
+  margin-right: 10px;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 20px;
+  font-size: 14px;
+  border-top: 1px solid #ccc;
+}
+</style>
+</body>
+</html>
